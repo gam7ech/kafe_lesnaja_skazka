@@ -1,0 +1,95 @@
+@import '../../styles/variables';
+
+.testi { // Ты назвал эту секцию 'testi', но используешь для 'services'
+    padding-block-end: 340px;
+    position: static;
+    color: $white;
+    
+    // .container { // Этот z-index уже есть в App.scss
+    //     position: relative;
+    //     z-index: 2;
+    // }
+
+    .section-title {
+        margin-bottom: 70px;
+        position: relative;
+        color: $gold-crayola; // В твоем CSS .services .section-title
+    }
+
+    .services-content {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        
+        @media (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .service-card {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 12px;
+        padding: 30px;
+        width: 100%;
+        max-width: 400px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(212, 167, 98, 0.3);
+        transition: transform 0.3s ease;
+        
+        @media (max-width: $breakpoint-tablet) {
+            max-width: 100%;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        &.highlight {
+            border: 2px solid $gold-crayola;
+        }
+    }
+
+    .card-icon {
+        font-size: 48px;
+        color: $gold-crayola;
+        margin-bottom: 20px;
+    }
+
+    .card-title {
+        color: $gold-crayola;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .service-list {
+        text-align: left;
+        list-style-type: none;
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+
+            &::before {
+                content: "•";
+                color: $gold-crayola;
+                font-size: 20px;
+                position: absolute;
+                left: 0;
+                top: -2px;
+            }
+        }
+    }
+    
+    .cta-block {
+        margin-top: 50px;
+    }
+
+    .cta-text {
+        margin-bottom: 100px;
+        font-weight: 500;
+    }
+}

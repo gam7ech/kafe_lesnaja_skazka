@@ -1,0 +1,190 @@
+@import '../../styles/variables';
+
+.reservation {
+    .reservation-form {
+        margin-block-start: -270px;
+
+        @media (min-width: $breakpoint-laptop) {
+            display: grid;
+            grid-template-columns: 1fr 0.5fr;
+        }
+    }
+
+    .form-left,
+    .form-right {
+        padding: 40px 20px 30px;
+        
+        @media (min-width: $breakpoint-desktop) {
+            padding: 75px 60px;
+        }
+    }
+
+    .form-text {
+        margin-block-end: 40px;
+
+        .link {
+            display: inline;
+            color: $gold-crayola;
+        }
+    }
+
+    .input-wrapper {
+        @media (min-width: $breakpoint-tablet) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
+        
+        &:nth-child(4) { // Для 3-х полей
+            @media (min-width: $breakpoint-tablet) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+    
+    textarea.input-field {
+        resize: none;
+        height: 140px;
+        padding-block: 20px;
+        line-height: $lineHeight-1;
+    }
+
+    .form-left .btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .form-right {
+        background-repeat: repeat;
+        background-position: top left;
+        
+        .headline-1 {
+            margin-block-end: 40px;
+        }
+        
+        .contact-label {
+            margin-block-end: 5px;
+        }
+
+        .separator {
+            margin: 20px auto;
+        }
+
+        .body-4 {
+            color: $quick-silver;
+            line-height: $lineHeight-3;
+
+            &:not(:last-child) {
+                margin-block-end: 25px;
+            }
+        }
+    }
+    
+    // Стили для новых классов из Delivery.jsx
+    .promo-block {
+        margin: 20px 0;
+    }
+
+    .promo-icon-wrapper {
+        position: relative;
+        margin-bottom: 5px;
+    }
+
+    .promo-input {
+        font-weight: $weight-bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        border: 2px solid $gold-crayola;
+        background: rgba($gold-crayola, 0.1);
+
+        &::placeholder {
+            color: rgba($gold-crayola, 0.8);
+            opacity: 1;
+        }
+    }
+
+    .promo-hint {
+        font-size: 0.8em;
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .delivery-conditions {
+        margin: 25px 0;
+    }
+
+    .condition-item {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+
+        &.highlight {
+            border-color: $gold-crayola;
+            
+            .condition-value {
+                color: $gold-crayola;
+            }
+        }
+    }
+
+    .condition-title {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 5px;
+    }
+
+    .condition-value {
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    .payment-info {
+        // ... (стили, если нужны)
+    }
+
+    .payment-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px;
+
+        ion-icon {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+            padding: 8px;
+            border-radius: 50%;
+            position: relative; // Для title
+            
+            &:hover {
+                color: $gold-crayola;
+                transform: scale(1.2);
+                background: rgba($gold-crayola, 0.1);
+                
+                &::after { // Tooltip
+                    content: attr(title);
+                    position: absolute;
+                    bottom: -25px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 12px;
+                    background: $gold-crayola;
+                    color: $black;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    
+    .delivery-zone {
+        // ... (стили, если нужны)
+    }
+
+    .zone-desc {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+}

@@ -1,0 +1,94 @@
+@import '../../styles/variables';
+
+.map-section { // Ты назвал класс .map-section
+    .map-container {
+        position: relative;
+        margin: 30px 0;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .map-overlay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(22, 47, 3, 0.9); // Странный цвет, не из твоих переменных
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 300px;
+        z-index: 100;
+        color: $white;
+
+        @media (max-width: $breakpoint-tablet) {
+            position: relative;
+            max-width: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 0 0 12px 12px;
+        }
+    }
+
+    .map-info h3 {
+        color: $white;
+        margin-bottom: 15px;
+    }
+
+    .contact-info {
+        margin: 15px 0;
+    }
+
+    .address-link {
+        // Стили для address-link, если нужны
+    }
+    
+    .contact-link,
+    .work-hours {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $white;
+        margin-bottom: 8px;
+    }
+
+    .route-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .route-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        background: $gold-crayola;
+        color: $black;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+
+        &.secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: $white;
+        }
+
+        &:hover {
+            background: #e8b973; // Хардкод, можно заменить на $gold-crayola
+        }
+
+        &.secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    }
+    
+    #yandex-map {
+        @media (max-width: $breakpoint-tablet) {
+            height: 400px !important; // Перебиваем inline-style
+        }
+    }
+}

@@ -1,0 +1,386 @@
+@import '../../styles/variables';
+
+.topbar {
+    display: none; // Скрыто по умолчанию
+
+    @media (min-width: $breakpoint-mobile) {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-block: 10px;
+        border-block-end: 1px solid $white-alpha-20;
+        z-index: 4;
+        transition: $transition-1;
+    }
+
+    &:has(~ .header.active) {
+        @media (min-width: $breakpoint-mobile) {
+            transform: translateY(-100%);
+        }
+    }
+
+    .container {
+        @media (min-width: $breakpoint-mobile) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        @media (min-width: $breakpoint-desktop) {
+            max-width: unset;
+        }
+    }
+
+    &-item {
+        @media (min-width: $breakpoint-mobile) {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        @media (min-width: $breakpoint-laptop) {
+            &:not(.link) {
+                display: flex;
+            }
+        }
+
+        &.item-2 {
+            @media (min-width: $breakpoint-laptop) {
+                margin-inline-end: auto;
+            }
+        }
+
+        ion-icon {
+            --ionicon-stroke-width: 60px;
+        }
+
+        .span {
+            font-size: $fontSize-label-1;
+        }
+
+        &:not(.link) {
+            display: none;
+        }
+    }
+
+    .separator {
+        display: none;
+        @media (min-width: $breakpoint-desktop) {
+            display: block;
+        }
+    }
+
+    .link {
+        transition: $transition-1;
+        &:is(:hover, :focus-visible) {
+            color: $gold-crayola;
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding-block: 40px;
+    z-index: 4;
+    border-block-end: 1px solid transparent;
+    transition: $transition-1;
+
+    @media (min-width: $breakpoint-mobile) {
+        top: 51px; // Освобождаем место для .topbar
+    }
+
+    &.active {
+        padding-block: 20px;
+        background-color: $eerie-black-4;
+        border-color: $black-alpha-15;
+
+        @media (min-width: $breakpoint-mobile) {
+            top: 0; // Прилипаем к верху, когда .topbar спрятан
+        }
+    }
+
+    &.hide {
+        transform: translateY(-100%);
+        transition-delay: 250ms;
+    }
+
+    .container {
+        padding-inline: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+
+        @media (min-width: $breakpoint-desktop) {
+            max-width: unset;
+        }
+    }
+
+    .btn {
+        display: none;
+        @media (min-width: $breakpoint-mobile) {
+            display: block;
+            margin-inline-start: auto;
+        }
+        @media (min-width: $breakpoint-desktop) {
+            margin-inline: auto 20px;
+        }
+        @media (min-width: $breakpoint-desktop-xl) {
+            margin-inline-start: 0;
+        }
+    }
+}
+
+.nav-open-btn {
+    padding: 12px;
+    padding-inline-end: 0;
+
+    .line {
+        width: 30px;
+        height: 2px;
+        background-color: $white;
+        margin-block: 4px;
+        transform-origin: left;
+        animation: menuBtn 400ms ease-in-out alternate infinite;
+    }
+
+    .line-2 {
+        animation-delay: 150ms;
+    }
+    .line-3 {
+        animation-delay: 300ms;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        display: none;
+    }
+}
+
+@keyframes menuBtn {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0.5);
+    }
+}
+
+.navbar {
+    position: fixed;
+    background-color: $smoky-black-1;
+    top: 0;
+    left: -360px;
+    bottom: 0;
+    max-width: 360px;
+    width: 100%;
+    padding-inline: 30px;
+    padding-block-end: 50px;
+    overflow-y: auto;
+    visibility: hidden;
+    z-index: 2;
+    transition: $transition-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $breakpoint-desktop) {
+        all: unset; // Сброс всех стилей
+        margin-inline: auto 20px;
+    }
+    
+    @media (min-width: $breakpoint-desktop-xl) {
+        margin-inline: auto; // Центрирование на больших экранах
+    }
+
+    &.active {
+        visibility: visible;
+        transform: translateX(360px);
+
+        @media (min-width: $breakpoint-desktop) {
+            all: unset;
+        }
+    }
+
+    .close-btn {
+        color: $white;
+        border: 1px solid currentColor;
+        padding: 4px;
+        border-radius: $radius-circle;
+        margin-inline-start: auto;
+        margin-block: 30px 20px;
+        align-self: flex-end;
+
+        ion-icon {
+            --ionicon-stroke-width: 40px;
+        }
+
+        &:is(:hover, :focus-visible) {
+            color: $gold-crayola;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+
+    .logo {
+        max-width: max-content;
+        margin-inline: auto;
+        margin-block-end: 60px;
+
+        @media (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+
+    &-list {
+        border-block-end: 1px solid $white-alpha-20;
+        margin-block-end: 100px;
+        width: 100%;
+        text-align: center;
+
+        @media (min-width: $breakpoint-tablet) {
+            margin-inline: 30px;
+        }
+
+        @media (min-width: $breakpoint-desktop) {
+            all: unset;
+            display: flex;
+            gap: 30px;
+        }
+    }
+
+    &-item {
+        border-block-start: 1px solid $white-alpha-20;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        @media (min-width: $breakpoint-desktop) {
+            border-block-start: none;
+        }
+    }
+
+    &-link {
+        position: relative;
+        font-size: $fontSize-label-2;
+        text-transform: uppercase;
+        padding: 10px 20px;
+        width: auto;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: $breakpoint-desktop) {
+            font-weight: $weight-bold;
+            letter-spacing: $letterSpacing-1;
+        }
+
+        &::after {
+            display: none; // Скрыто по умолчанию
+            @media (min-width: $breakpoint-desktop) {
+                display: block; // Показываем на десктопе (из .hover-underline)
+            }
+        }
+        
+        &.active::after {
+            @media (min-width: $breakpoint-desktop) {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        .span {
+            transition: $transition-1;
+            position: relative;
+            display: inline-block;
+        }
+
+        &.active .span {
+            transform: translateX(0);
+            color: $gold-crayola;
+            
+            @media (min-width: $breakpoint-desktop) {
+                transform: unset;
+            }
+        }
+
+        .separator {
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            opacity: 0;
+            transition: $transition-1;
+            
+            @media (min-width: $breakpoint-desktop) {
+                display: none;
+            }
+        }
+
+        &.active .separator {
+            opacity: 1;
+            left: -15px;
+            transform: translateY(-50%) rotate(45deg);
+        }
+    }
+
+    &-title {
+        margin-block-end: 15px;
+        text-align: center;
+    }
+
+    &-text {
+        margin-block: 10px;
+        text-align: center;
+    }
+
+    .body-4 {
+        color: $quick-silver;
+        text-align: center;
+    }
+
+    .contact-label {
+        margin-block-end: 10px;
+        text-align: center;
+    }
+    
+    // Стили для .navbar > *:not(.navbar-list)
+    & > *:not(.navbar-list) {
+        @media (min-width: $breakpoint-desktop) {
+            display: none;
+        }
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $white-alpha-10;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $black-alpha-80;
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition-2;
+    z-index: 1;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+        display: none;
+    }
+}
