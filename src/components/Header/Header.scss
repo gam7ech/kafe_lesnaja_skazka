@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .topbar {
-    display: none; // Скрыто по умолчанию
+    display: none;
 
     @media (min-width: $breakpoint-mobile) {
         display: block;
@@ -39,6 +39,11 @@
             align-items: center;
             gap: 6px;
         }
+
+        &:not(.link) {
+            display: none;
+        }
+
         @media (min-width: $breakpoint-laptop) {
             &:not(.link) {
                 display: flex;
@@ -57,10 +62,6 @@
 
         .span {
             font-size: $fontSize-label-1;
-        }
-
-        &:not(.link) {
-            display: none;
         }
     }
 
@@ -91,7 +92,7 @@
     transition: $transition-1;
 
     @media (min-width: $breakpoint-mobile) {
-        top: 51px; // Освобождаем место для .topbar
+        top: 51px;
     }
 
     &.active {
@@ -100,7 +101,7 @@
         border-color: $black-alpha-15;
 
         @media (min-width: $breakpoint-mobile) {
-            top: 0; // Прилипаем к верху, когда .topbar спрятан
+            top: 0;
         }
     }
 
@@ -189,12 +190,12 @@
     align-items: center;
 
     @media (min-width: $breakpoint-desktop) {
-        all: unset; // Сброс всех стилей
+        all: unset;
         margin-inline: auto 20px;
     }
-    
+
     @media (min-width: $breakpoint-desktop-xl) {
-        margin-inline: auto; // Центрирование на больших экранах
+        margin-inline: auto;
     }
 
     &.active {
@@ -283,12 +284,12 @@
         }
 
         &::after {
-            display: none; // Скрыто по умолчанию
+            display: none;
             @media (min-width: $breakpoint-desktop) {
-                display: block; // Показываем на десктопе (из .hover-underline)
+                display: block;
             }
         }
-        
+
         &.active::after {
             @media (min-width: $breakpoint-desktop) {
                 transform: scaleX(1);
@@ -305,7 +306,7 @@
         &.active .span {
             transform: translateX(0);
             color: $gold-crayola;
-            
+
             @media (min-width: $breakpoint-desktop) {
                 transform: unset;
             }
@@ -318,7 +319,7 @@
             transform: translateY(-50%) rotate(45deg);
             opacity: 0;
             transition: $transition-1;
-            
+
             @media (min-width: $breakpoint-desktop) {
                 display: none;
             }
@@ -350,14 +351,13 @@
         margin-block-end: 10px;
         text-align: center;
     }
-    
-    // Стили для .navbar > *:not(.navbar-list)
+
     & > *:not(.navbar-list) {
         @media (min-width: $breakpoint-desktop) {
             display: none;
         }
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background-color: $white-alpha-10;
     }

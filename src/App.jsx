@@ -21,7 +21,7 @@ function App() {
         const timer = setTimeout(() => {
             setIsLoading(false);
             document.body.classList.add('loaded');
-        }, 2500);
+        }, 3000);
 
         const parallaxItems = document.querySelectorAll("[data-parallax-item]");
 
