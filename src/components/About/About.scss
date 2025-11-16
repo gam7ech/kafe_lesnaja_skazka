@@ -4,25 +4,20 @@
     @media (min-width: $breakpoint-desktop-xl) {
         padding-block: 170px 100px;
     }
-
     .section-text {
         margin-block: 15px 30px;
-
         @media (min-width: $breakpoint-mobile) {
             max-width: 420px;
             margin-inline: auto;
         }
     }
-
     .btn {
         margin-inline: auto;
         margin-block-start: 26px;
     }
-
     .container {
         display: grid;
         gap: 120px;
-
         @media (min-width: $breakpoint-mobile) {
             gap: 80px;
         }
@@ -31,17 +26,14 @@
             gap: 30px;
         }
     }
-
     .about-content {
         @media (min-width: $breakpoint-desktop-xl) {
             padding-inline-end: 90px;
         }
     }
-
     .about-banner {
         position: relative;
         margin-block-end: 120px;
-
         & > .w-100 {
             padding-inline-start: 50px;
             @media (min-width: $breakpoint-mobile) {
@@ -49,24 +41,19 @@
             }
         }
     }
-
     .abs-img {
         position: absolute;
-
         &::before {
             z-index: -1;
         }
-
         &-1 {
             bottom: -120px;
             left: 0;
             width: 150px;
             padding-block: 50px;
-
             @media (min-width: $breakpoint-mobile) {
                 width: 285px;
             }
-
             &::before {
                 top: 0;
                 bottom: 0;
@@ -77,19 +64,10 @@
                 background-repeat: repeat;
             }
         }
-
         &-2 {
             top: -65px;
             right: 0;
             overflow: hidden;
-        }
-    }
-    
-    .shape {
-        top: 46%;
-        left: 0;
-        @media (min-width: $breakpoint-desktop-xl) {
-            display: block;
         }
     }
 }

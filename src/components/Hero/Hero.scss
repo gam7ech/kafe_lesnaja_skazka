@@ -6,11 +6,9 @@
     min-height: 100vh;
     overflow: hidden;
     z-index: 1;
-
     @media (min-width: $breakpoint-desktop) {
         height: 880px;
     }
-
     .slider-item {
         position: absolute;
         top: 50%;
@@ -25,37 +23,29 @@
         visibility: hidden;
         transition: $transition-3;
         z-index: 1;
-
         &.active {
             opacity: 1;
             visibility: visible;
-
             .slider-bg {
                 animation: smoothScale 7s linear forwards;
             }
-
             .slider-reveal {
                 animation: sliderReveal 1s ease forwards;
             }
-
             .section-subtitle {
                 animation-delay: 500ms;
             }
-
             .hero-title {
                 animation-delay: 1000ms;
             }
-
             .hero-text {
                 animation-delay: 1.5s;
             }
-
             .btn {
                 animation-delay: 2s;
             }
         }
     }
-
     .slider-bg {
         position: absolute;
         top: 0;
@@ -67,22 +57,17 @@
         user-select: none;
         z-index: -1;
     }
-
     .section-subtitle::after {
         margin-block: 14px 20px;
     }
-
     .hero-text {
         margin-block: 10px 40px;
     }
-
     .btn {
         margin-inline: auto;
     }
-
     .slider-btn {
         display: none;
-
         @media (min-width: $breakpoint-tablet) {
             display: grid;
             position: absolute;
@@ -97,25 +82,20 @@
             transform: translateY(-50%) rotate(45deg);
             transition: $transition-1;
         }
-
         ion-icon {
             transform: rotate(-45deg);
         }
-
         &.prev {
             left: 30px;
         }
-
         &.next {
             right: 30px;
         }
-
         &:is(:hover, :focus-visible) {
             background-color: $gold-crayola;
             color: $black;
         }
     }
-
     .hero-btn {
         position: absolute;
         bottom: 15px;
@@ -126,7 +106,6 @@
         height: 110px;
         padding: 12px;
         transform: scale(0.6);
-
         @media (min-width: $breakpoint-mobile) {
             transform: scale(0.7);
         }
@@ -135,12 +114,10 @@
             right: 50px;
             transform: scale(1);
         }
-
         img {
             margin-inline: auto;
             margin-block-end: 6px;
         }
-
         .span {
             color: $black;
             font-weight: $weight-bold;
@@ -148,38 +125,33 @@
             letter-spacing: $letterSpacing-1;
             line-height: $lineHeight-3;
         }
-
         &::after {
             inset: 0;
             border: 1px solid $gold-crayola;
             animation: rotate360 15s linear infinite;
         }
     }
-}
-
-.slider-reveal {
-    transform: translateY(30px);
-    opacity: 0;
-    will-change: opacity, transform;
-}
-
-@keyframes smoothScale {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.15);
-    }
-}
-
-@keyframes sliderReveal {
-    0% {
+    .slider-reveal {
         transform: translateY(30px);
         opacity: 0;
+        will-change: opacity, transform;
     }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
+    @keyframes smoothScale {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
+    @keyframes sliderReveal {
+        0% {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 }

@@ -2,47 +2,38 @@
 
 .special-dish {
     text-align: center;
-    
-    @media (max-width: 767px) { // Специальный медиа-запрос из твоего CSS
+    @media (max-width: 767px) {
         display: flex;
         flex-direction: column-reverse;
         gap: 0 !important;
     }
-
     @media (min-width: $breakpoint-laptop) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         text-align: left;
     }
-    
     @media (min-width: $breakpoint-desktop-xl) {
         overflow: visible;
         position: relative;
     }
-
     &-banner {
         @media (max-width: 767px) {
             margin-top: 0;
             margin-bottom: 0;
         }
     }
-
     &-content {
         padding-block: 70px;
-        
         @media (max-width: 767px) {
             padding-bottom: 0;
         }
-
         @media (min-width: $breakpoint-laptop) {
             padding-inline: 50px 25px;
         }
-        
         @media (min-width: $breakpoint-desktop) {
             padding: 225px 120px;
             padding-inline-end: 0;
         }
-
         .container {
             @media (max-width: 767px) {
                 padding-top: 20px;
@@ -57,11 +48,9 @@
             }
         }
     }
-
     .abs-img {
         margin-inline: auto;
         margin-block-end: 12px;
-
         @media (min-width: $breakpoint-laptop) {
             position: absolute;
             top: 10px;
@@ -69,38 +58,31 @@
             animation: move 5s linear infinite;
         }
     }
-
     .section-subtitle::after {
         @media (min-width: $breakpoint-laptop) {
             margin-inline: 0;
         }
     }
-
     .section-text {
         margin-block: 16px 40px;
     }
-
     .wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
         margin-block-end: 40px;
-
         @media (min-width: $breakpoint-laptop) {
             justify-content: flex-start;
         }
     }
-
     .del {
         text-decoration: none;
         color: $davys-grey;
     }
-
     .span {
         color: $gold-crayola;
     }
-
     .btn {
         margin-inline: auto;
         
@@ -112,7 +94,6 @@
             margin-inline: 0;
         }
     }
-
     .shape {
         @media (min-width: $breakpoint-desktop-xl) {
             display: block;
@@ -120,13 +101,11 @@
             z-index: 1;
         }
     }
-
     .shape-1 {
         @media (min-width: $breakpoint-desktop-xl) {
             top: 45%;
         }
     }
-
     .shape-2 {
         @media (min-width: $breakpoint-desktop-xl) {
             bottom: 0;

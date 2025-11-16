@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './Delivery.scss';
-import formPattern from '../../assets/images/form-pattern.png';
 
 function Delivery() {
     const [name, setName] = useState('');
@@ -12,7 +11,7 @@ function Delivery() {
     const handleSubmit = () => {
         if (!isFormValid) return;
         
-        const message = `Новый заказ на доставку:\n\nИмя: ${name}\nТелефон: ${phone}\nПромокод: ${promo || 'Не использован'}\n\nПожалуйста, перезвоните для оформления и подтверждения заказа.`;
+        const message = `Новый заказ на доставку:\n\nИмя: ${name.trim()}\nТелефон: ${phone.trim()}\nПромокод: ${promo.trim() || 'Не использован'}\n\nПожалуйста, перезвоните для оформления и подтверждения заказа.`;
         const encodedMessage = encodeURIComponent(message);
         const whatsappUrl = `https://wa.me/79525454235?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
@@ -79,7 +78,8 @@ function Delivery() {
                             <span className="text text-2" aria-hidden="true">Заказать доставку</span>
                         </button>
                     </form>
-                    <div className="form-right text-center" style={{ backgroundImage: `url(${formPattern})` }}>
+                    
+                    <div className="form-right text-center">
                         <h2 className="headline-1 text-center">Условия доставки</h2>
                         <div className="delivery-conditions">
                             <div className="condition-item">

@@ -12,7 +12,6 @@
     place-items: center;
     transition: opacity 0.5s ease, visibility 0.5s ease;
     transition-delay: 2.5s;
-
     &.loaded {
         opacity: 0;
         visibility: hidden;
@@ -28,14 +27,12 @@
     position: relative;
     overflow: hidden;
     padding: 10px;
-
     span {
         display: inline-block;
         opacity: 0;
         transform: translateY(20px);
         animation: fadeInLetter 0.5s forwards;
     }
-
     .preloader__space {
         width: 0.5em;
     }

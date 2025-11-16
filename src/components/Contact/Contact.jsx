@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
 import './Contact.scss';
 
+import mapMarker from '../../assets/images/map-marker.png';
+
 const openYandexRoute = (e) => {
     e.preventDefault();
     const url = `https://yandex.ru/maps/?rtext=~51.648046,39.107922&mode=routes`;
@@ -35,7 +37,7 @@ function Contact() {
                 balloonContent: "Проспект Патриотов 52Е, Воронеж"
             }, {
                 iconLayout: 'default#image',
-                iconImageHref: '/assets/images/map-marker.png',
+                iconImageHref: mapMarker,
                 iconImageSize: [48, 48],
                 iconImageOffset: [-24, -48]
             }));
@@ -48,7 +50,7 @@ function Contact() {
                 <p className="section-subtitle label-2 text-center">Как нас найти</p>
                 <h2 className="section-title headline-1 text-center">Мы ждём вас!</h2>
                 <div className="map-container">
-                    <div id="yandex-map" ref={mapRef} style={{ width: '100%', height: '500px', borderRadius: '16px' }}></div>
+                    <div id="yandex-map" ref={mapRef}></div>
                     <div className="map-overlay">
                         <div className="map-info">
                             <h3 className="title-2">Кафе-Бар <br /> Лесная Сказка</h3>

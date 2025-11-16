@@ -1,58 +1,50 @@
 @import '../../styles/variables';
 
 .footer {
-    background-color: #111; // Хардкод, можно заменить на $eerie-black-2
+    background-color: $eerie-black-2;
     color: $white;
-    font-family: 'Arial', sans-serif; // Хардкод, можно $fontFamily-dm_sans
+    font-family: $fontFamily-dm_sans;
     padding: 50px 0 30px;
     position: relative;
     overflow: hidden;
-
     &-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
     }
-
     &-main {
         display: flex;
         justify-content: center;
         gap: 100px;
         margin-bottom: 30px;
         flex-wrap: wrap;
-
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             gap: 50px;
             margin-bottom: 50px;
         }
     }
-
     &-contacts,
     &-social {
         flex: 0 1 400px;
         min-width: 300px;
         text-align: center;
-        
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) { 
             width: 100%;
             max-width: 100%;
             margin-bottom: 20px;
         }
     }
-
     &-title {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: $weight-semibold;
         margin-bottom: 20px;
         color: $gold-crayola;
         position: relative;
         padding-bottom: 10px;
-        
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             font-size: 16px;
             margin-bottom: 15px;
         }
-
         &:after {
             content: '';
             position: absolute;
@@ -64,34 +56,28 @@
             background: $gold-crayola;
         }
     }
-
     .contact-item {
         display: flex;
         align-items: center;
         margin-bottom: 15px;
-        color: #aaa; // Хардкод, можно $quick-silver
+        color: $footer-text-light;
         transition: color 0.3s;
         justify-content: center;
-        
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             margin-bottom: 12px;
         }
-
         &:hover {
             color: $white;
         }
-
         a {
             color: inherit;
             text-decoration: none;
             transition: color 0.3s;
-
             &:hover {
                 color: $gold-crayola;
             }
         }
     }
-
     .contact-icon {
         width: 20px;
         height: 20px;
@@ -99,14 +85,12 @@
         margin-right: 15px;
         flex-shrink: 0;
     }
-
     .social-links {
         display: flex;
         flex-direction: column;
         gap: 12px;
         align-items: center;
     }
-
     .social-link {
         display: flex;
         align-items: center;
@@ -116,72 +100,62 @@
         text-decoration: none;
         transition: all 0.3s;
         width: fit-content;
-
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) { 
             padding: 10px 20px;
             font-size: 14px;
             margin-bottom: 8px;
         }
-
         &.vk {
-            background-color: #4a76a8;
+            background-color: $vk-color; 
         }
-
         &.whatsapp {
-            background-color: #25d366;
+            background-color: $whatsapp-color;
         }
-
         &:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
     }
-
     .social-icon {
         width: 20px;
         height: 20px;
         margin-right: 12px;
         fill: currentColor;
     }
-
     &-divider {
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+        background: $white-alpha-10;
         margin: 30px auto;
         max-width: 1000px;
         
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             margin: 20px auto;
         }
     }
-
     &-bottom {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        color: #777; // Хардкод, можно $quick-silver
+        color: $footer-text-dark; 
         font-size: 14px;
         text-align: center;
         
-        @media (max-width: $breakpoint-tablet) {
+        @media (max-width: ($breakpoint-tablet - 1px)) { 
             gap: 12px;
             font-size: 13px;
         }
     }
-
     .footer-hours {
         display: flex;
         align-items: center;
         gap: 8px;
     }
-
     .clock-icon {
         width: 16px;
         height: 16px;
         fill: $gold-crayola;
     }
-
     .footer-copyright a {
         color: $gold-crayola;
         text-decoration: none;
