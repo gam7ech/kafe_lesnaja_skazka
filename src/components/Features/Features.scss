@@ -1,11 +1,12 @@
 @import '../../styles/variables';
 
 .features {
+    padding-block: 120px 100px;
     @media (min-width: $breakpoint-desktop-xl) {
         overflow: visible;
     }
     .section-title {
-        margin-block-end: 40px;
+        margin-block-end: 50px;
     }
     .grid-list {
         @media (min-width: $breakpoint-desktop) {

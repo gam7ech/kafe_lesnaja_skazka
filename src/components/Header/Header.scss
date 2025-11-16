@@ -320,20 +320,21 @@
         place-items: center;
         width: 40px;
         height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: $white-alpha-10;
+        border-radius: $radius-circle;
         transition: $transition-1;
         &:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: $white-alpha-20;
             transform: translateY(-2px);
         }
         ion-icon {
-            font-size: 28px;
+            font-size: 24px;
         }
         .icon-whatsapp {
-            color: #25D366;
+            color: $whatsapp-color;
         }
         .icon-vk {
-            color: #4A76A8;
+            color: $vk-color;
         }
     }
 }

@@ -2,7 +2,7 @@
 
 .reservation {
     .reservation-form {
-        margin-block-start: -270px;
+        margin-block-start: -350px;
         @media (min-width: $breakpoint-laptop) {
             display: grid;
             grid-template-columns: 1fr 0.5fr;

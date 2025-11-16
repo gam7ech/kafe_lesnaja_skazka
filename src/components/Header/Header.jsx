@@ -3,7 +3,6 @@ import './Header.scss';
 import logoImg from '../../assets/images/logo.avif';
 
 import { siteConfig, openYandexRoute } from '../../data/siteConfig';
-import Icon from '../common/Icon';
 
 function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -114,10 +113,10 @@ function Header() {
                             
                             <div className="social-links">
                                 <a href={siteConfig.whatsappLink} className="social-icon-link" target="_blank" aria-label="WhatsApp">
-                                    <Icon name="whatsapp" className="icon-whatsapp" />
+                                    <ion-icon name="logo-whatsapp" className="icon-whatsapp"></ion-icon>
                                 </a>
                                 <a href={siteConfig.vkLink} className="social-icon-link" target="_blank" aria-label="VK">
-                                    <Icon name="vk" className="icon-vk" />
+                                    <ion-icon name="logo-vk" className="icon-vk"></ion-icon>
                                 </a>
                             </div>
                             

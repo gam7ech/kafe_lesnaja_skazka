@@ -16,6 +16,27 @@ $black: hsla(0, 0%, 0%, 1);
 $black-alpha-80: hsla(0, 0%, 0%, 0.8);
 $black-alpha-15: hsla(0, 0%, 0%, 0.15);
 
+// --- Новые Цвета (Компоненты) ---
+// Меню
+$menu-text-dark: #333;
+$menu-text-light: #222;
+$menu-text-description: #000000c5;
+$menu-text-price: #000000;
+$menu-text-weight: #000000f5;
+$menu-border-light: #e8e8e8;
+$menu-border-dashed: #eee;
+$menu-gold-hover: #8b5a2b;
+// Services
+$black-alpha-70: hsla(0, 0%, 0%, 0.7);
+$gold-crayola-alpha-30: hsla(38, 61%, 73%, 0.3);
+$white-alpha-30: hsla(0, 0%, 100%, 0.3);
+$gold-crayola-hover: hsl(38, 70%, 70%);
+// Footer
+$vk-color: #4a76a8;
+$whatsapp-color: #25d366;
+$footer-text-light: #aaa;
+$footer-text-dark: #777;
+
 // --- Градиенты ---
 $loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, $smoky-black-3 33.33% 50%, transparent 66.66% 75%);
 $gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
@@ -26,35 +47,7 @@ $fontFamily-dm_sans: 'DM Sans', sans-serif;
 $fontFamily-playfair: 'Playfair Display', serif;
 $fontFamily-open_sans: 'Open Sans', sans-serif;
 
-// --- Цвета для Меню (Новые) ---
-$menu-text-dark: #333;
-$menu-text-light: #222;
-$menu-text-description: #000000c5;
-$menu-text-price: #000000;
-$menu-text-weight: #000000f5;
-$menu-border-light: #e8e8e8;
-$menu-border-dashed: #eee;
-$menu-gold-hover: #8b5a2b;
-
-// --- ПЕРЕМЕННЫЕ ДЛЯ SERVICES ---
-$black-alpha-70: hsla(0, 0%, 0%, 0.7);
-$gold-crayola-alpha-30: hsla(38, 61%, 73%, 0.3);
-
-$white-alpha-30: hsla(0, 0%, 100%, 0.3);
-$gold-crayola-hover: hsl(38, 70%, 70%);
-
-// --- Насыщенность Шрифта ---
-$weight-regular: 400;
-$weight-semibold: 600;
-$weight-bold: 700;
-
-
-// --- Отступы и Тени ---
-$section-space: 70px;
-$shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
-$blur-1: 5px;
-
-// --- Размеры Шрифтов (Типографика) ---
+// --- Типографика ---
 $fontSize-display-1: calc(1.3rem + 6.7vw);
 $fontSize-headline-1: calc(2rem + 2.5vw);
 $fontSize-headline-2: calc(1.3rem + 2.4vw);
@@ -69,11 +62,10 @@ $fontSize-body-4: 1.6rem;
 $fontSize-label-1: 1.4rem;
 $fontSize-label-2: 1.2rem;
 
-// --- Насыщенность Шрифта ---
 $weight-regular: 400;
+$weight-semibold: 600;
 $weight-bold: 700;
 
-// --- Высота Строки ---
 $lineHeight-1: 1em;
 $lineHeight-2: 1.2em;
 $lineHeight-3: 1.5em;
@@ -81,16 +73,16 @@ $lineHeight-4: 1.6em;
 $lineHeight-5: 1.85em;
 $lineHeight-6: 1.4em;
 
-// --- Межбуквенный Интервал ---
 $letterSpacing-1: 0.15em;
 $letterSpacing-2: 0.4em;
 $letterSpacing-3: 0.2em;
 $letterSpacing-4: 0.3em;
 $letterSpacing-5: 3px;
 
-// --- Отступы и Тени ---
+// --- Макет (Отступы, Тени, Размытие) ---
 $section-space: 70px;
 $shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+$blur-1: 5px;
 
 // --- Радиусы ---
 $radius-24: 24px;
@@ -107,9 +99,3 @@ $breakpoint-tablet: 768px;
 $breakpoint-laptop: 992px;
 $breakpoint-desktop: 1200px;
 $breakpoint-desktop-xl: 1400px;
-
-// (--- Цвета ---)
-$vk-color: #4a76a8;
-$whatsapp-color: #25d366;
-$footer-text-light: #aaa;
-$footer-text-dark: #777;

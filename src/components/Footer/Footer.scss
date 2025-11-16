@@ -28,7 +28,7 @@
         flex: 0 1 400px;
         min-width: 300px;
         text-align: center;
-        @media (max-width: ($breakpoint-tablet - 1px)) { 
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             width: 100%;
             max-width: 100%;
             margin-bottom: 20px;
@@ -81,7 +81,7 @@
     .contact-icon {
         width: 20px;
         height: 20px;
-        fill: $gold-crayola;
+        color: $gold-crayola; // "Чисто": (fill -> color)
         margin-right: 15px;
         flex-shrink: 0;
     }
@@ -100,13 +100,13 @@
         text-decoration: none;
         transition: all 0.3s;
         width: fit-content;
-        @media (max-width: ($breakpoint-tablet - 1px)) { 
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             padding: 10px 20px;
             font-size: 14px;
             margin-bottom: 8px;
         }
         &.vk {
-            background-color: $vk-color; 
+            background-color: $vk-color;
         }
         &.whatsapp {
             background-color: $whatsapp-color;
@@ -120,14 +120,13 @@
         width: 20px;
         height: 20px;
         margin-right: 12px;
-        fill: currentColor;
+        color: currentColor;
     }
     &-divider {
         height: 1px;
         background: $white-alpha-10;
         margin: 30px auto;
         max-width: 1000px;
-        
         @media (max-width: ($breakpoint-tablet - 1px)) {
             margin: 20px auto;
         }
@@ -137,11 +136,10 @@
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        color: $footer-text-dark; 
+        color: $footer-text-dark;
         font-size: 14px;
         text-align: center;
-        
-        @media (max-width: ($breakpoint-tablet - 1px)) { 
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             gap: 12px;
             font-size: 13px;
         }
@@ -154,7 +152,7 @@
     .clock-icon {
         width: 16px;
         height: 16px;
-        fill: $gold-crayola;
+        color: $gold-crayola;
     }
     .footer-copyright a {
         color: $gold-crayola;

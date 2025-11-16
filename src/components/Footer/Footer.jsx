@@ -1,7 +1,5 @@
 import './Footer.scss';
-
 import { siteConfig, openYandexRoute } from '../../data/siteConfig';
-import Icon from '../common/Icon';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -13,15 +11,15 @@ function Footer() {
                     <div className="footer-contacts">
                         <h3 className="footer-title">Контакты</h3>
                         <div className="contact-item">
-                            <Icon name="location" className="contact-icon" />
+                            <ion-icon name="location-outline" class="contact-icon"></ion-icon>
                             <a href="#" onClick={openYandexRoute} className="address-link">{siteConfig.address}</a>
                         </div>
                         <div className="contact-item">
-                            <Icon name="email" className="contact-icon" />
+                            <ion-icon name="mail-outline" class="contact-icon"></ion-icon>
                             <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
                         </div>
                         <div className="contact-item">
-                            <Icon name="phone" className="contact-icon" />
+                            <ion-icon name="call-outline" class="contact-icon"></ion-icon>
                             <a href={`tel:${siteConfig.phone}`}>{siteConfig.phoneFormatted}</a>
                         </div>
                     </div>
@@ -29,11 +27,11 @@ function Footer() {
                         <h3 className="footer-title">Мы в соцсетях</h3>
                         <div className="social-links">
                             <a href={siteConfig.vkLink} className="social-link vk" target="_blank">
-                                <Icon name="vk" className="social-icon" />
+                                <ion-icon name="logo-vk" class="social-icon"></ion-icon>
                                 ВКонтакте
                             </a>
                             <a href={siteConfig.whatsappLink} className="social-link whatsapp" target="_blank">
-                                <Icon name="whatsapp" className="social-icon" />
+                                <ion-icon name="logo-whatsapp" class="social-icon"></ion-icon>
                                 WhatsApp
                             </a>
                         </div>
@@ -42,7 +40,7 @@ function Footer() {
                 <div className="footer-divider"></div>
                 <div className="footer-bottom">
                     <div className="footer-hours">
-                        <Icon name="clock" className="clock-icon" />
+                        <ion-icon name="time-outline" class="clock-icon"></ion-icon>
                         <span>{siteConfig.workHours}</span> 
                     </div>
                     <div className="footer-copyright">
