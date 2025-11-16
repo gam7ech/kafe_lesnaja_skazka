@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './Header.scss';
-import logoImg from '../../assets/images/logo.avif';
 
 import { siteConfig, openYandexRoute } from '../../data/siteConfig';
-
 function Header() {
     const [isNavOpen, setIsNavOpen] = useState(false);
     const [isHeaderActive, setIsHeaderActive] = useState(false);
@@ -84,17 +82,21 @@ function Header() {
 
             <header className={`header ${isHeaderActive ? 'active' : ''} ${isHeaderHidden ? 'hide' : ''}`}>
                 <div className="container">
-                    <a href="/" className="logo">
-                        <img src={logoImg} width="160" height="50" alt="Кафе-Бар Лесная Сказка" />
+                    <a href="/" className="logo logo-text">
+                        <span className="logo-line-1">Кафе-Бар</span>
+                        <span className="logo-line-2">Лесная Сказка</span>
                     </a>
 
                     <nav className={`navbar ${isNavOpen ? 'active' : ''}`}>
                         <button className="close-btn" aria-label="close menu" onClick={toggleNav}>
                             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
                         </button>
-                        <a href="/" className="logo">
-                            <img src={logoImg} width="160" height="50" alt="Кафе-Бар Лесная Сказка" />
+                        
+                        <a href="/" className="logo logo-text">
+                            <span className="logo-line-1">Кафе-Бар</span>
+                            <span className="logo-line-2">Лесная Сказка</span>
                         </a>
+
                         <ul className="navbar-list">
                             <li className="navbar-item"><a href="#home" className="navbar-link hover-underline active" onClick={(e) => handleNavLinkClick(e, '#home')}><span className="span">ГЛАВНАЯ</span></a></li>
                             <li className="navbar-item"><a href="#menu" className="navbar-link hover-underline" onClick={(e) => handleNavLinkClick(e, '#menu')}><span className="span">МЕНЮ</span></a></li>
@@ -104,7 +106,7 @@ function Header() {
                             <li className="navbar-item"><a href="#about" className="navbar-link hover-underline" onClick={(e) => handleNavLinkClick(e, '#about')}><span className="span">О НАС</span></a></li>
                         </ul>
                         <div className="text-center">
-                            <p className="headline-1 navbar-title">Наша визитка <br /> Кафе-Бар <br /> Лесная Сказка</p>
+                            <p className="headline-1 navbar-title">Наша визитка </p>
                             <a href="#" onClick={openYandexRoute} className="address-link">{siteConfig.address}</a>
                             <p className="body-4 navbar-text">{siteConfig.workHours}</p>
                             <a href={`mailto:${siteConfig.email}`} className="body-4 navbar-text link">

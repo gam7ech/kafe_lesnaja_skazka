@@ -89,13 +89,22 @@
         @media (min-width: $breakpoint-mobile) {
             top: 0;
         }
+        .logo-text {
+            padding-block: 0;
+            .logo-line-1 {
+                font-size: $fontSize-label-2;
+            }
+            .logo-line-2 {
+                font-size: $fontSize-title-3;
+            }
+        }
     }
     &.hide {
         transform: translateY(-100%);
         transition-delay: 250ms;
     }
     .container {
-        padding-inline: 20px;
+        padding-inline: 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -116,6 +125,30 @@
         @media (min-width: $breakpoint-desktop-xl) {
             margin-inline-start: 0;
         }
+    }
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.1;
+    padding: 5px 0;
+    transition: $transition-1;
+    .logo-line-1 {
+        font-size: $fontSize-label-1;
+        color: $quick-silver;
+        font-family: $fontFamily-dm_sans;
+        font-weight: $weight-regular;
+        transition: $transition-1;
+    }
+    .logo-line-2 {
+        font-size: $fontSize-title-2;
+        color: $white;
+        font-family: $fontFamily-forum;
+        font-weight: $weight-bold;
+        letter-spacing: 1px;
+        transition: $transition-1;
     }
 }
 
@@ -199,10 +232,16 @@
             display: none;
         }
     }
-    .logo {
-        max-width: max-content;
+    .logo-text {
+        align-items: center;
         margin-inline: auto;
-        margin-block-end: 60px;
+        margin-block-end: 40px;
+        .logo-line-1 {
+            font-size: $fontSize-body-4;
+        }
+        .logo-line-2 {
+            font-size: $fontSize-headline-2;
+        }
         @media (min-width: $breakpoint-desktop) {
             display: none;
         }
@@ -286,15 +325,15 @@
         }
     }
     &-title {
-        margin-block-end: 15px;
+        margin-block-end: 25px;
         text-align: center;
+        color: $gold-crayola;
     }
     &-text {
         margin-block: 10px;
         text-align: center;
     }
     .body-4 {
-        color: $quick-silver;
         text-align: center;
     }
     .contact-label {
@@ -313,7 +352,7 @@
         display: flex;
         justify-content: center;
         gap: 20px;
-        margin: 20px 0;
+        margin: 25px 0;
     }
     .social-icon-link {
         display: grid;
