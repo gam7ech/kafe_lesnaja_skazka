@@ -60,7 +60,7 @@ function Footer() {
                         <span>Ежедневно с 11:00 до 23:00</span>
                     </div>
                     <div className="footer-copyright">
-                        <span>&copy; 2003. Кафе - Бар "Лесная Сказка" <a href="https://t.me/ig2mv" target="_blank">Разработано | Гамет Мурадов</a></span>
+                        <span>&copy; 2003. Кафе - Бар "Лесная Сказка" <a href="https://gam7ech.vercel.app/" target="_blank">Разработано | Gam7ech</a></span>
                     </div>
                 </div>
             </div>

@@ -5,39 +5,12 @@
         margin-block-end: 40px;
     }
 
-    .menu-tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-        gap: 15px;
-    }
-
-    .menu-tab {
-        padding: 12px 25px;
-        background: rgba(255, 255, 255, 0.1);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        font-family: inherit;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &.active {
-            background: #d4a762; // Используем $gold-crayola?
-            color: #000;
-        }
-    }
-
     .menu-content {
-        display: none;
-        &.active {
-            display: block;
-        }
+        display: block;
     }
 
     .menu-accordion {
-        font-family: 'Playfair Display', serif; // Нужно ли импортировать этот шрифт?
+        font-family: 'Playfair Display', serif;
         max-width: 900px;
         margin: 0 auto;
         color: #333;
@@ -82,13 +55,13 @@
         text-align: left;
 
         &:hover {
-            color: #8b5a2b; // Используем $gold-crayola?
+            color: #8b5a2b;
         }
 
         ion-icon {
             transition: transform 0.3s ease;
             font-size: 15px;
-            color: #8b5a2b; // Используем $gold-crayola?
+            color: #8b5a2b;
         }
     }
 
@@ -181,7 +154,7 @@
         line-height: 1.5;
         color: #000000c5;
         margin: 0;
-        font-family: 'Open Sans', sans-serif; // Еще один шрифт?
+        font-family: 'Open Sans', sans-serif;
         width: 100%;
         order: 4;
     }
@@ -190,10 +163,21 @@
         background-color: #25D366;
         border-color: #25D366;
         color: #000;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
 
-        .text-1 {
+        span {
+            all: unset;
             color: #000;
+            font-size: $fontSize-label-2;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+            letter-spacing: $letterSpacing-5;
+            transition: color 0.3s ease;
         }
+
         .whatsapp-icon {
             color: #000;
             font-size: 20px;
@@ -203,7 +187,7 @@
         &:hover {
             background-color: #128C7E;
             border-color: #128C7E;
-            .text-1 {
+            span {
                 color: $white !important;
             }
             .whatsapp-icon {
@@ -213,6 +197,10 @@
 
         &::before {
             display: none;
+        }
+
+        .text-1, .text-2 {
+            all: unset;
         }
     }
 
