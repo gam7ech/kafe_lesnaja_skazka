@@ -7,6 +7,7 @@ import heroIcon from '../../assets/images/hero-icon.png';
 
 function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
     const totalSlides = 3;
     const intervalRef = useRef(null);
 
@@ -29,11 +30,17 @@ function Hero() {
 
     useEffect(() => {
         startAutoSlide();
-        return () => stopAutoSlide();
+        
+        const timer = setTimeout(() => setIsLoading(false), 50);
+
+        return () => {
+            stopAutoSlide();
+            clearTimeout(timer);
+        };
     }, []);
 
     return (
-        <section className="hero text-center" aria-label="home" id="home">
+        <section className={`hero text-center ${isLoading ? 'loading' : ''}`} aria-label="home" id="home">
             <ul className="hero-slider">
                 <li className={`slider-item ${currentSlide === 0 ? 'active' : ''}`}>
                     <div className="slider-bg">
