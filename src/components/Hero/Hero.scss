@@ -33,16 +33,16 @@
                 animation: sliderReveal 1s ease forwards;
             }
             .section-subtitle {
-                animation-delay: 500ms;
-            }
-            .hero-title {
                 animation-delay: 1000ms;
             }
+            .hero-title {
+                animation-delay: 2000ms;
+            }
             .hero-text {
-                animation-delay: 1.5s;
+                animation-delay: 3000ms;
             }
             .btn {
-                animation-delay: 2s;
+                animation-delay: 4000ms;
             }
         }
     }
