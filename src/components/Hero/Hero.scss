@@ -23,7 +23,6 @@
         opacity: 0;
         visibility: hidden;
         z-index: 1;
-
         transition: opacity 1s ease, visibility 1s ease;
 
         &.active {
@@ -33,19 +32,20 @@
                 animation: smoothScale 7s linear forwards;
             }
             .slider-reveal {
-                animation: sliderReveal 1s ease forwards;
+                opacity: 1;
+                transform: translateY(0);
             }
             .section-subtitle {
-                animation-delay: 500ms;
+                transition-delay: 500ms;
             }
             .hero-title {
-                animation-delay: 1000ms;
+                transition-delay: 1000ms;
             }
             .hero-text {
-                animation-delay: 1.5s;
+                transition-delay: 1500ms;
             }
             .btn {
-                animation-delay: 2s;
+                transition-delay: 2000ms;
             }
         }
     }
@@ -142,27 +142,17 @@
     }
 
     .slider-reveal {
-        transform: translateY(30px);
         opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
+    
     @keyframes smoothScale {
         0% {
             transform: scale(1);
         }
         100% {
             transform: scale(1.15);
-        }
-    }
-    
-    @keyframes sliderReveal {
-        0% {
-            transform: translateY(30px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
         }
     }
 }
