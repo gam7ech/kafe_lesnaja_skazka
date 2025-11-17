@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .testi { 
-    padding-top: 100px;
+    padding-block: 100px;
     position: relative;
     color: $white;
     .overlay-dark {
@@ -14,12 +14,11 @@
         z-index: 1;
     }
     .container {
-        padding-top: 100px;
         position: relative;
         z-index: 2;
     }
     .section-title {
-        margin-bottom: 40px;
+        margin-bottom: 50px;
         position: relative;
         color: $gold-crayola; 
     }

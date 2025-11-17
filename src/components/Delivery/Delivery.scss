@@ -1,9 +1,9 @@
 @import '../../styles/variables';
 
 .reservation {
-    padding-top: 100px;
+    padding-block: 100px;
+    
     .reservation-form {
-        margin-block-start: -350px;
         @media (min-width: $breakpoint-laptop) {
             display: grid;
             grid-template-columns: 1fr 0.5fr;

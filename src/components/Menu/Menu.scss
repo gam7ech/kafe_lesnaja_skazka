@@ -1,9 +1,9 @@
 @import '../../styles/variables';
 
 .menu {
-    padding-top: 100px;
+    padding-block: 100px;
     .section-title {
-        margin-block-end: 25px;
+        margin-block-end: 50px;
     }
     .menu-content {
         display: block;
@@ -143,8 +143,8 @@
         order: 4;
     }
     .whatsapp-btn {
-        background-color: #25D366;
-        border-color: #25D366;
+        background-color: $whatsapp-color;
+        border-color: $whatsapp-color;
         color: $black;
         display: inline-flex;
         align-items: center;

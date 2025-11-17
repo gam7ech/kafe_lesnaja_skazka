@@ -1,12 +1,12 @@
 @import '../../styles/variables';
 
 .special-dish {
-    padding-top: 100px;
+    padding-block: 100px;
     text-align: center;
-    @media (max-width: 767px) {
+    @media (max-width: ($breakpoint-tablet - 1px)) {
         display: flex;
         flex-direction: column-reverse;
-        gap: 0 !important;
+        gap: 0;
     }
     @media (min-width: $breakpoint-laptop) {
         display: grid;
@@ -18,14 +18,14 @@
         position: relative;
     }
     &-banner {
-        @media (max-width: 767px) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             margin-top: 0;
             margin-bottom: 0;
         }
     }
     &-content {
         padding-block: 70px;
-        @media (max-width: 767px) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             padding-bottom: 0;
         }
         @media (min-width: $breakpoint-laptop) {
@@ -36,7 +36,7 @@
             padding-inline-end: 0;
         }
         .container {
-            @media (max-width: 767px) {
+            @media (max-width: ($breakpoint-tablet - 1px)) {
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
@@ -87,7 +87,7 @@
     .btn {
         margin-inline: auto;
         
-        @media (max-width: 767px) {
+        @media (max-width: ($breakpoint-tablet - 1px)) {
             margin-bottom: 30px;
         }
         
