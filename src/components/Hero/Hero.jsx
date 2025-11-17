@@ -7,7 +7,7 @@ import heroIcon from '../../assets/images/hero-icon.png';
 
 function Hero() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isReady, setIsReady] = useState(false);
     const totalSlides = 3;
     const intervalRef = useRef(null);
 
@@ -31,7 +31,9 @@ function Hero() {
     useEffect(() => {
         startAutoSlide();
         
-        const timer = setTimeout(() => setIsLoading(false), 50);
+        const timer = setTimeout(() => {
+            setIsReady(true);
+        }, 50);
 
         return () => {
             stopAutoSlide();
@@ -40,9 +42,9 @@ function Hero() {
     }, []);
 
     return (
-        <section className={`hero text-center ${isLoading ? 'loading' : ''}`} aria-label="home" id="home">
+        <section className={`hero text-center ${!isReady ? 'loading' : ''}`} aria-label="home" id="home">
             <ul className="hero-slider">
-                <li className={`slider-item ${currentSlide === 0 ? 'active' : ''}`}>
+                <li className={`slider-item ${currentSlide === 0 && isReady ? 'active' : ''}`}>
                     <div className="slider-bg">
                         <img src={slider1} width="1880" height="950" alt="Кавказский шашлык" className="img-cover" />
                         <div className="overlay-dark"></div>
@@ -60,7 +62,7 @@ function Hero() {
                         <span className="text text-2" aria-hidden="true">Листать</span>
                     </a>
                 </li>
-                <li className={`slider-item ${currentSlide === 1 ? 'active' : ''}`}>
+                <li className={`slider-item ${currentSlide === 1 && isReady ? 'active' : ''}`}>
                     <div className="slider-bg">
                         <img src={slider2} width="1880" height="950" alt="Авторские салаты" className="img-cover" />
                         <div className="overlay-dark"></div>
@@ -78,7 +80,7 @@ function Hero() {
                         <span className="text text-2" aria-hidden="true">Листать</span>
                     </a>
                 </li>
-                <li className={`slider-item ${currentSlide === 2 ? 'active' : ''}`}>
+                <li className={`slider-item ${currentSlide === 2 && isReady ? 'active' : ''}`}>
                     <div className="slider-bg">
                         <img src={slider3} width="1880" height="950" alt="Лучшие вина" className="img-cover" />
                         <div className="overlay-dark"></div>
