@@ -29,18 +29,28 @@ function Hero() {
     };
 
     useEffect(() => {
-        const img = new Image();
-        img.src = slider1;
-        
-        img.onload = () => {
-            setIsPreloading(false);
-            startAutoSlide();
-        };
-        
-        return () => {
-            stopAutoSlide();
-            img.onload = null;
-        };
+        const imagesToLoad = [slider1, slider2, slider3];
+        const promises = imagesToLoad.map(src => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+        });
+
+        Promise.all(promises)
+            .then(() => {
+                setIsPreloading(false);
+                startAutoSlide();
+            })
+            .catch(err => {
+                console.error("Failed to preload images", err);
+                setIsPreloading(false);
+                startAutoSlide();
+            });
+
+        return () => stopAutoSlide();
     }, []);
 
     return (
