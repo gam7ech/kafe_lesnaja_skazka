@@ -10,6 +10,11 @@
         height: 880px;
     }
 
+    &.loading .slider-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
     .slider-item {
         position: absolute;
         top: 50%;
