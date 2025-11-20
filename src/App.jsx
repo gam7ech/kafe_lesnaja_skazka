@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
-import Preloader from './components/Preloader/Preloader';
+// import Preloader from './components/Preloader/Preloader';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Offers from './components/Offers/Offers';
@@ -47,7 +47,7 @@ function App() {
 
     return (
         <>
-            <Preloader isLoading={isLoading} />
+            {/* <Preloader isLoading={isLoading} /> */}
             <Header />
             <main>
                 <article>
