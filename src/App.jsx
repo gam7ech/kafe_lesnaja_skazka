@@ -10,7 +10,7 @@ import Menu from './components/Menu/Menu';
 import Services from './components/Services/Services';
 import Delivery from './components/Delivery/Delivery';
 import Features from './components/Features/Features';
-import Contact from './components/Contact/Contact';
+import Contacts from './components/Contacts/Contacts';
 import Footer from './components/Footer/Footer';
 import BackToTopButton from './components/BackToTopButton/BackToTopButton';
 
@@ -59,7 +59,7 @@ function App() {
                     <Services />
                     <Delivery />
                     <Features />
-                    <Contact />
+                    <Contacts />
                 </article>
             </main>
             <Footer />
