@@ -81,10 +81,10 @@ function Hero() {
                         <div className="overlay-dark"></div>
                     </div>
                     <p className="label-2 section-subtitle slider-reveal">Незабываемые впечатления</p>
-                    <h1 className="display-1 hero-title slider-reveal">
+                    <h2 className="display-1 hero-title slider-reveal">
                         Свежесть и гармония <br />
                         в каждой тарелке
-                    </h1>
+                    </h2>
                     <p className="body-2 hero-text slider-reveal">
                         Авторские салаты из сезонных продуктов
                     </p>
@@ -100,10 +100,10 @@ function Hero() {
                         <div className="overlay-dark"></div>
                     </div>
                     <p className="label-2 section-subtitle slider-reveal">Вкусно и атмосферно</p>
-                    <h1 className="display-1 hero-title slider-reveal">
+                    <h2 className="display-1 hero-title slider-reveal">
                         Изысканная палитра <br />
                         виноградных терруаров
-                    </h1>
+                    </h2>
                     <p className="body-2 hero-text slider-reveal">
                         Лучшие вина для вашего гастрономического путешествия
                     </p>
