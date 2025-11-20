@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skazka.vercel.app/sitemap.xml

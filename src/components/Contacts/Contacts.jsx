@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import './Contact.scss';
+import './Contacts.scss';
 
 import mapMarker from '../../assets/images/map-marker.png';
 
@@ -14,7 +14,7 @@ const callTaxi = (e) => {
     window.open('yandextaxi://route?end-lat=51.648046&end-lon=39.107922&end-name=Лесная Сказка');
 }
 
-function Contact() {
+function Contacts() {
     const mapRef = useRef(null);
 
     useEffect(() => {
@@ -54,11 +54,11 @@ function Contact() {
                     <div className="map-overlay">
                         <div className="map-info">
                             <h3 className="title-2">Кафе-Бар <br /> Лесная Сказка</h3>
-                            <div className="contact-info">
+                            <div className="contacts-info">
                                 <a href="#" onClick={openYandexRoute} className="address-link">Проспект Патриотов 52Е</a>
                             </div>
-                            <div className="contact-info">
-                                <a href="tel:+74732617600" className="contact-link">
+                            <div className="contacts-info">
+                                <a href="tel:+74732617600" className="contacts-link">
                                     <ion-icon name="call-outline"></ion-icon>
                                     +7 (473) 261-76-00
                                 </a>
@@ -85,4 +85,4 @@ function Contact() {
     );
 }
 
-export default Contact;
+export default Contacts;
