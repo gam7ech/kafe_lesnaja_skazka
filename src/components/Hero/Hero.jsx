@@ -136,7 +136,7 @@ function Hero() {
             
             <a href="#menu" className="hero-btn has-after">
                 <img src={heroIcon} width="48" height="48" alt="booking icon" />
-                <span className="label-2 text-center span">ОТКРЫТЬ МЕНЮ</span> 
+                <span className="label-2 text-center span">ОТКРЫТЬ МЕНЮ</span>
             </a>
         </section>
     );
