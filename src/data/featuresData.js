@@ -3,7 +3,6 @@ import feature2 from '../assets/images/features-icon-2.png';
 import feature3 from '../assets/images/features-icon-3.png';
 import feature4 from '../assets/images/features-icon-4.png';
 
-// "База данных" преимуществ
 export const featuresList = [
     {
         icon: feature1,

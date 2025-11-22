@@ -20,7 +20,7 @@ function SpecialDish() {
                     </p>
                     <div className="wrapper">
                         <del className="del body-3">100 грамм</del>
-                        <span className="span body-1">200 рублей</span>
+                        <span className="span body-1">230 рублей</span>
                     </div>
                     <a href="#menu" className="btn btn-primary">
                         <span className="text text-1">Весь ассортимент</span>

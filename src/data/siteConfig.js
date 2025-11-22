@@ -8,7 +8,6 @@ export const openYandexRoute = (e) => {
     window.open(url, '_blank');
 }
 
-// Вся контактная информация
 export const siteConfig = {
     phone: '+74732617600',
     phoneFormatted: '+7 (473) 261-76-00',

@@ -1,5 +1,3 @@
-// Это наша "База Данных" для Услуг
-
 export const servicesList = [
     {
         icon: 'business-outline',
