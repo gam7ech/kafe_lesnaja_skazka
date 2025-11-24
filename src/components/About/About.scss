@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .about {
-    padding-block: 100px;
     .section-text {
         margin-block: 15px 30px;
         @media (min-width: $breakpoint-mobile) {

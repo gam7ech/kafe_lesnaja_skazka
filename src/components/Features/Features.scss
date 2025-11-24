@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .features {
-    padding-block: 100px;
     @media (min-width: $breakpoint-desktop-xl) {
         overflow: visible;
     }
