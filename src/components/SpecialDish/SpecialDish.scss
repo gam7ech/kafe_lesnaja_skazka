@@ -1,7 +1,6 @@
 @import '../../styles/variables';
 
 .special-dish {
-    padding-block: 100px;
     text-align: center;
     @media (max-width: ($breakpoint-tablet - 1px)) {
         display: flex;

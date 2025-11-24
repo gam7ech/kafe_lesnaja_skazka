@@ -1,8 +1,6 @@
 @import '../../styles/variables';
 
 .reservation {
-    padding-block: 100px;
-    
     .reservation-form {
         @media (min-width: $breakpoint-laptop) {
             display: grid;

@@ -62,7 +62,6 @@ function Menu() {
                 
                 <div className="menu-content active" id="banquet-menu">
                     <div className="menu-accordion">
-                        {/* И теперь мы просто "бежим" по нашему banquetMenu */}
                         {banquetMenu.map(category => renderAccordionItem(category))}
                     </div>
                 </div>
