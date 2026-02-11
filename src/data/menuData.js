@@ -144,8 +144,8 @@ export const banquetMenu = [
         title: 'Хлеб',
         image: breadImg,
         items: [
-            { name: 'Лаваш', price: '120 ₽', description: 'Традиционный лаваш' },
-            { name: 'Хлебная корзина', price: '150 ₽', description: 'Ассорти из свежего хлеба и лаваша' },
+            { name: 'Лепешка на углях', price: '120 ₽', description: 'Золотистая корочка и легкий аромат дымка' },
+            { name: 'Хлебная корзина', price: '150 ₽', description: 'Ассорти из свежего хлеба и лепешки' },
         ],
     },
     {
