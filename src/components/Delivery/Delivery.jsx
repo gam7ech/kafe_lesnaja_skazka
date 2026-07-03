@@ -25,7 +25,7 @@ function Delivery() {
                         <h2 className="headline-1 text-center">Заказать доставку</h2>
                         <p className="form-text text-center">
                             Позвоните нам или закажите обратный звонок<br />
-                            Связь по номеру: <a href="tel:+74732617600" className="link">+7 (473) 261-76-00</a>
+                            Связь по номеру: <a href="tel:+79525454235" className="link">+7 (952) 545-42-35</a>
                         </p>
                         <div className="input-wrapper">
                             <input
@@ -65,7 +65,7 @@ function Delivery() {
                                     onChange={(e) => setPromo(e.target.value)}
                                 />
                             </div>
-                            <p className="promo-hint">Промокод из рекламного буклета</p>
+                            <p className="promo-hint">Промокоды появляются в Instagram</p>
                         </div>
                         <button
                             type="button"
@@ -88,11 +88,11 @@ function Delivery() {
                             </div>
                             <div className="condition-item">
                                 <p className="condition-title">Минимальный заказ</p>
-                                <p className="condition-value">500 ₽</p>
+                                <p className="condition-value">1000 ₽</p>
                             </div>
                             <div className="condition-item">
                                 <p className="condition-title">Стоимость доставки</p>
-                                <p className="condition-value">150 ₽</p>
+                                <p className="condition-value">250 ₽</p>
                             </div>
                             <div className="condition-item highlight">
                                 <p className="condition-title">Бесплатная доставка</p>

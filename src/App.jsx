@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import Preloader from './components/Preloader/Preloader';
+import InstagramPopup from './components/InstagramPopup/InstagramPopup';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Offers from './components/Offers/Offers';
@@ -48,6 +49,7 @@ function App() {
     return (
         <>
             <Preloader isLoading={isLoading} />
+            <InstagramPopup isLoading={isLoading} />
             <Header />
             <main>
                 <article>

@@ -4,8 +4,8 @@ export const servicesList = [
         title: 'Просторные помещения',
         highlight: false,
         items: [
-        '<strong>Главный зал</strong> — до 90 человек',
-        '<strong>Банкетный зал</strong> — до 30 гостей',
+        '<strong>Главный зал</strong> — до 75 человек',
+        '<strong>Банкетный зал</strong> — до 25 гостей',
         '<strong>Летняя терраса</strong> с уютными беседками',
         '<strong>Шатёр</strong> — крытая площадка на 30 персон',
         ],

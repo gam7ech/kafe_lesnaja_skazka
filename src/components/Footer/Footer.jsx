@@ -26,9 +26,9 @@ function Footer() {
                     <div className="footer-social">
                         <h3 className="footer-title">Мы в соцсетях</h3>
                         <div className="social-links">
-                            <a href={siteConfig.vkLink} className="social-link vk" target="_blank">
-                                <ion-icon name="logo-vk" class="social-icon"></ion-icon>
-                                ВКонтакте
+                            <a href={siteConfig.instagramLink} className="social-link instagram" target="_blank">
+                                <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+                                Instagram
                             </a>
                             <a href={siteConfig.whatsappLink} className="social-link whatsapp" target="_blank">
                                 <ion-icon name="logo-whatsapp" class="social-icon"></ion-icon>
@@ -39,12 +39,8 @@ function Footer() {
                 </div>
                 <div className="footer-divider"></div>
                 <div className="footer-bottom">
-                    <div className="footer-hours">
-                        <ion-icon name="time-outline" class="clock-icon"></ion-icon>
-                        <span>{siteConfig.workHours}</span> 
-                    </div>
                     <div className="footer-copyright">
-                        <span>&copy; 2003 - {currentYear}. Кафе - Бар "Лесная Сказка" <a href="https://gam7ech.vercel.app/" target="_blank">Разработано | Gam7ech</a></span>
+                        <span>&copy; 2003 - {currentYear}. Ресторан "Лесная Сказка" <a href="https://gam7ech.vercel.app/" target="_blank">Разработано | GAMA</a></span>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Menu.scss';
 
 import { banquetMenu } from '../../data/menuData'; 
@@ -20,22 +20,45 @@ function MenuItem({ item }) {
 
 function Menu() {
     const [openAccordion, setOpenAccordion] = useState(['Холодные закуски']);
+    const accordionRefs = useRef({});
 
     const toggleAccordion = (itemName) => {
-        setOpenAccordion(prevOpen =>
-            prevOpen.includes(itemName)
+        setOpenAccordion(prevOpen => {
+            const isOpen = prevOpen.includes(itemName);
+
+            const newState = isOpen
                 ? prevOpen.filter(item => item !== itemName)
-                : [itemName]
-        );
+                : [itemName];
+
+            setTimeout(() => {
+                const element = accordionRefs.current[itemName];
+
+                if (element) {
+                    const yOffset = -80;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                    window.scrollTo({
+                        top: y,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 150);
+
+            return newState;
+        });
     };
 
     const handleShareMenu = () => {
-        const message = `🍽️ Привет! Зацени меню в «Лесной Сказке». \n\nТам есть всё, от закусок до блюд на мангале. \n\nПосмотри сам: ${window.location.href}`;
+        const message = `Привет! Зацени меню в «Лесной Сказке». \n\nТам есть всё, от закусок до блюд на мангале. \n\nПосмотри сам: ${window.location.href}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
     };
     
     const renderAccordionItem = (category) => (
-        <div className={`accordion-item ${openAccordion.includes(category.title) ? 'active' : ''}`} key={category.title}>
+        <div
+            ref={(el) => (accordionRefs.current[category.title] = el)}
+            className={`accordion-item ${openAccordion.includes(category.title) ? 'active' : ''}`}
+            key={category.title}
+        >
             <button className="accordion-header" onClick={() => toggleAccordion(category.title)}>
                 <span>{category.title}</span>
                 <ion-icon name="chevron-down-outline"></ion-icon>
@@ -58,7 +81,7 @@ function Menu() {
         <section className="section menu" aria-label="menu" id="menu">
             <div className="container">
                 <p className="section-subtitle text-center label-2">БЛЮДА НАШЕГО ЗАВЕДЕНИЯ</p>
-                <h2 className="headline-1 section-title text-center">НАШЕ БАНКЕТНОЕ МЕНЮ</h2>
+                <h2 className="headline-1 section-title text-center">МЕНЮ</h2>
                 
                 <div className="menu-content active" id="banquet-menu">
                     <div className="menu-accordion">
@@ -69,7 +92,6 @@ function Menu() {
                 <div className="text-center menu-cta">
                     <button id="shareWhatsApp" className="btn whatsapp-btn" onClick={handleShareMenu}>
                         <span>Поделиться в WhatsApp</span>
-                        <ion-icon name="logo-whatsapp" className="whatsapp-icon"></ion-icon>
                     </button>
                 </div>
                 

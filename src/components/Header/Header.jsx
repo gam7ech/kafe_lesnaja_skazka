@@ -83,8 +83,8 @@ function Header() {
             <header className={`header ${isHeaderActive ? 'active' : ''} ${isHeaderHidden ? 'hide' : ''}`}>
                 <div className="container">
                     <a href="/" className="logo logo-text">
-                        <span className="logo-line-1">Кафе-Бар</span>
-                        <span className="logo-line-2">Лесная Сказка</span>
+                        <span className="logo-line-1">РЕСТОРАН</span>
+                        <span className="logo-line-2">ЛЕСНАЯ СКАЗКА</span>
                     </a>
 
                     <nav className={`navbar ${isNavOpen ? 'active' : ''}`}>
@@ -93,8 +93,8 @@ function Header() {
                         </button>
                         
                         <a href="/" className="logo logo-text">
-                            <span className="logo-line-1">Кафе-Бар</span>
-                            <span className="logo-line-2">Лесная Сказка</span>
+                            <span className="logo-line-1">РЕСТОРАН</span>
+                            <span className="logo-line-2">ЛЕСНАЯ СКАЗКА</span>
                         </a>
 
                         <ul className="navbar-list">
@@ -106,7 +106,7 @@ function Header() {
                             <li className="navbar-item"><a href="#about" className="navbar-link hover-underline" onClick={(e) => handleNavLinkClick(e, '#about')}><span className="span">О НАС</span></a></li>
                         </ul>
                         <div className="text-center">
-                            <p className="headline-1 navbar-title">Наша визитка </p>
+                            <p className="headline-1 navbar-title">ВИЗИТКА </p>
                             <a href="#" onClick={openYandexRoute} className="address-link">{siteConfig.address}</a>
                             <p className="body-4 navbar-text">{siteConfig.workHours}</p>
                             <a href={`mailto:${siteConfig.email}`} className="body-4 navbar-text link">
@@ -117,8 +117,13 @@ function Header() {
                                 <a href={siteConfig.whatsappLink} className="social-icon-link" target="_blank" aria-label="WhatsApp">
                                     <ion-icon name="logo-whatsapp" className="icon-whatsapp"></ion-icon>
                                 </a>
-                                <a href={siteConfig.vkLink} className="social-icon-link" target="_blank" aria-label="VK">
-                                    <ion-icon name="logo-vk" className="icon-vk"></ion-icon>
+                                <a
+                                    href="https://instagram.com/lesnayaskazka_rest"
+                                    className="social-icon-link"
+                                    target="_blank"
+                                    aria-label="Instagram"
+                                >
+                                    <ion-icon name="logo-instagram" className="icon-instagram"></ion-icon>
                                 </a>
                             </div>
                             

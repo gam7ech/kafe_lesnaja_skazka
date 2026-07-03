@@ -9,12 +9,13 @@ export const openYandexRoute = (e) => {
 }
 
 export const siteConfig = {
-    phone: '+74732617600',
-    phoneFormatted: '+7 (473) 261-76-00',
-    email: 'kafe.lesnaja-skazka@yandex.ru',
+    phone: '+79525454235',
+    phoneFormatted: '+7 (952) 545-42-35',
+    email: 'lesnayaskazkarest@gmail.com',
     address: 'Проспект Патриотов 52Е',
-    workHours: 'Ежедневно с 11:00 до 00:00',
-    workHoursShort: 'с 11:00 до 00:00',
+    workHours: 'Ежедневно с 11:00 до 01:00',
+    workHoursShort: 'с 11:00 до 01:00',
     whatsappLink: 'https://wa.me/79525454235',
-    vkLink: 'https://vk.com/vk.comskaska',
+    instagramUsername: 'lesnayaskazka_rest',
+    instagramLink: 'https://instagram.com/lesnayaskazka_rest',
 };

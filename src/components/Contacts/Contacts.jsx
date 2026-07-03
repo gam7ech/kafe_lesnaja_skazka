@@ -58,13 +58,13 @@ function Contacts() {
                                 <a href="#" onClick={openYandexRoute} className="address-link">Проспект Патриотов 52Е</a>
                             </div>
                             <div className="contacts-info">
-                                <a href="tel:+74732617600" className="contacts-link">
+                                <a href="tel:+79525454235" className="contacts-link">
                                     <ion-icon name="call-outline"></ion-icon>
-                                    +7 (473) 261-76-00
+                                    +7 (952) 545-42-35
                                 </a>
                                 <p className="work-hours">
                                     <ion-icon name="time-outline"></ion-icon>
-                                    Ежедневно с 11:00 до 00:00
+                                    Ежедневно с 11:00 до 01:00
                                 </p>
                             </div>
                             <div className="route-buttons">

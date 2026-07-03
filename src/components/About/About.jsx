@@ -9,10 +9,10 @@ function About() {
                     <p className="label-2 section-subtitle" id="about-label">Наша история</p>
                     <h2 className="headline-1 section-title">ЛЕСНАЯ СКАЗКА</h2>
                     <p className="section-text">
-                        С 2003 года Кафе-Бар Лесная Сказка вдохновляет гостей в сердце Воронежа <br /> Наша история - это сказка о волшебстве вкуса, раскрывающаяся на проспекте Патриотов, 52Е
+                        С 2003 года мы работаем в Воронеже на проспекте Патриотов, 52Е <br /> Ресторан «Лесная Сказка» — место, где вкус и атмосфера соединяются в одном пространстве.
                     </p>
                     <div className="contact-label">Резерв стола и организация банкета</div>
-                    <a href="tel:+74732617600" className="body-1 contact-number hover-underline">+7 (473) 261-76-00</a>
+                    <a href="tel:+74732617600" className="body-1 contact-number hover-underline">+7 (952) 545-42-35</a>
                     <a href="#services" className="btn btn-primary">
                         <span className="text text-1">Узнать</span>
                         <span className="text text-2" aria-hidden="true">Подробнее</span>
