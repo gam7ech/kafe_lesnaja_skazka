@@ -13,90 +13,105 @@ function MenuItem({ item }) {
                 {item.weight && <div className="item-weight">{item.weight}</div>}
                 <div className="item-price">{item.price}</div>
             </div>
-            {item.description && <p className="item-description">{item.description}</p>}
+            {item.description && (
+                <p className="item-description">{item.description}</p>
+            )}
         </div>
     );
 }
 
 function Menu() {
     const [openAccordion, setOpenAccordion] = useState(['Холодные закуски']);
-    const accordionRefs = useRef({});
+    const refs = useRef({});
 
-    const toggleAccordion = (itemName) => {
-        setOpenAccordion(prevOpen => {
-            const isOpen = prevOpen.includes(itemName);
+    const toggleAccordion = (title) => {
+        setOpenAccordion(prev => {
+            const isOpen = prev.includes(title);
 
             const newState = isOpen
-                ? prevOpen.filter(item => item !== itemName)
-                : [itemName];
+                ? prev.filter(i => i !== title)
+                : [title];
 
-            setTimeout(() => {
-                const element = accordionRefs.current[itemName];
+            return newState;
+        });
 
-                if (element) {
-                    const yOffset = -80;
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        // ждём 2 кадра после рендера (это важно)
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                const el = refs.current[title];
+
+                if (el) {
+                    const y = el.getBoundingClientRect().top + window.scrollY - 90;
 
                     window.scrollTo({
                         top: y,
                         behavior: 'smooth'
                     });
                 }
-            }, 150);
-
-            return newState;
+            });
         });
     };
 
     const handleShareMenu = () => {
-        const message = `Привет! Зацени меню в «Лесной Сказке». \n\nТам есть всё, от закусок до блюд на мангале. \n\nПосмотри сам: ${window.location.href}`;
+        const message = `Привет! Посмотри меню «Лесной Сказки»:\n\n${window.location.href}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
     };
-    
-    const renderAccordionItem = (category) => (
-        <div
-            ref={(el) => (accordionRefs.current[category.title] = el)}
-            className={`accordion-item ${openAccordion.includes(category.title) ? 'active' : ''}`}
-            key={category.title}
-        >
-            <button className="accordion-header" onClick={() => toggleAccordion(category.title)}>
-                <span>{category.title}</span>
-                <ion-icon name="chevron-down-outline"></ion-icon>
-            </button>
-            <div className="accordion-content">
-                {category.image && (
-                    <div className="menu-section-image">
-                        <img src={category.image} alt={category.title} />
-                    </div>
-                )}
-
-                {category.items.map(item => (
-                    <MenuItem item={item} key={item.name} />
-                ))}
-            </div>
-        </div>
-    );
 
     return (
-        <section className="section menu" aria-label="menu" id="menu">
+        <section className="section menu" id="menu">
             <div className="container">
-                <p className="section-subtitle text-center label-2">БЛЮДА НАШЕГО ЗАВЕДЕНИЯ</p>
-                <h2 className="headline-1 section-title text-center">МЕНЮ</h2>
-                
-                <div className="menu-content active" id="banquet-menu">
-                    <div className="menu-accordion">
-                        {banquetMenu.map(category => renderAccordionItem(category))}
-                    </div>
+
+                <p className="section-subtitle text-center label-2">
+                    БЛЮДА НАШЕГО ЗАВЕДЕНИЯ
+                </p>
+
+                <h2 className="headline-1 section-title text-center">
+                    МЕНЮ
+                </h2>
+
+                <div className="menu-accordion">
+
+                    {banquetMenu.map((category) => {
+                        const isActive = openAccordion.includes(category.title);
+
+                        return (
+                            <div
+                                key={category.title}
+                                ref={(el) => (refs.current[category.title] = el)}
+                                className={`accordion-item ${isActive ? 'active' : ''}`}
+                            >
+                                <button
+                                    className="accordion-header"
+                                    onClick={() => toggleAccordion(category.title)}
+                                >
+                                    <span>{category.title}</span>
+                                    <ion-icon name="chevron-down-outline"></ion-icon>
+                                </button>
+
+                                <div className="accordion-content">
+                                    {category.image && (
+                                        <div className="menu-section-image">
+                                            <img src={category.image} alt={category.title} />
+                                        </div>
+                                    )}
+
+                                    {category.items.map((item) => (
+                                        <MenuItem key={item.name} item={item} />
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
 
                 <div className="text-center menu-cta">
-                    <button id="shareWhatsApp" className="btn whatsapp-btn" onClick={handleShareMenu}>
+                    <button className="btn whatsapp-btn" onClick={handleShareMenu}>
                         <span>Поделиться в WhatsApp</span>
                     </button>
                 </div>
-                
-                <img src={shape5} width="921" height="1036" loading="lazy" alt="" className="shape shape-2 move-anim" />
-                <img src={shape6} width="343" height="345" loading="lazy" alt="" className="shape shape-3 move-anim" />
+
+                <img src={shape5} className="shape shape-2 move-anim" alt="" />
+                <img src={shape6} className="shape shape-3 move-anim" alt="" />
             </div>
         </section>
     );

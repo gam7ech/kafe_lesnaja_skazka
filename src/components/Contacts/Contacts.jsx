@@ -33,7 +33,7 @@ function Contacts() {
             });
 
             myMap.geoObjects.add(new window.ymaps.Placemark(cafeCoords, {
-                hintContent: 'Кафе-Бар "Лесная Сказка"',
+                hintContent: 'РЕСТОРАН ЛЕСНАЯ СКАЗКА"',
                 balloonContent: "Проспект Патриотов 52Е, Воронеж"
             }, {
                 iconLayout: 'default#image',
@@ -53,7 +53,7 @@ function Contacts() {
                     <div id="yandex-map" ref={mapRef}></div>
                     <div className="map-overlay">
                         <div className="map-info">
-                            <h3 className="title-2">Кафе-Бар <br /> Лесная Сказка</h3>
+                            <h3 className="title-2">Ресторан <br /> Лесная Сказка</h3>
                             <div className="contacts-info">
                                 <a href="#" onClick={openYandexRoute} className="address-link">Проспект Патриотов 52Е</a>
                             </div>
